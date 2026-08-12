@@ -1,0 +1,67 @@
+{
+  "name": "ftc-code-utils",
+  "displayName": "FTC Code Utils",
+  "description": "Development utilities for FTC projects, including automatic file generation, templates, headers, and project structure.",
+  "version": "0.0.1",
+  "publisher": "team32722",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ftcJTeChmasters/FTCCodeUtils.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:ftcCodeUtils"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ftcCodeUtils",
+          "title": "FTC Code Utils",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "ftcCodeUtils": [
+        {
+          "id": "ftcCodeUtils",
+          "name": "FTC Code Utils",
+          "type": "webview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ftcCodeUtils.createClass",
+        "title": "FTC Code Utils: Create Java Class"
+      },
+      {
+        "command": "ftcCodeUtils.createSubsystem",
+        "title": "FTC Code Utils: Create Subsystem"
+      },
+      {
+        "command": "ftcCodeUtils.createOpMode",
+        "title": "FTC Code Utils: Create OpMode"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile && npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.5.0"
+  }
+}
